@@ -1,0 +1,150 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#quiz-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#answers {
+  list-style: none;
+  padding: 0;
+}
+
+#answers li {
+  margin-bottom: 10px;
+}
+
+#answers input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: background-color 0.3s ease;
+}
+
+#answers input[type="radio"]:checked {
+  background-color: var(--primary-color);
+}
+
+#answers label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+.submit:active {
+  background-color: #004080;
+}
+
+#selected-option {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+#next{
+  background-color: #000000;
+  display: none;
+}
+#next:hover{
+  background-color: #000000b9;
+}
+span{
+  font-size: 13px;
+  float: right;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+}
+@media (max-width: 500px) {
+  #quiz-container {
+    max-width: 100%;
+  }
+  #answers label {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #answers label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  #answers label:active::after {
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 1;
+  }
+  #quiz-container {
+    background-color: #333;
+    color: #fff;
+  }
+  body {
+    font-size: 18px;
+    background-color: #3a3a3ab9;
+  }
+  h1{
+    color: white;
+  }
+  #next {
+    background-color: #4cff10a4;
+    color: #fff;
+    
+  }
+  
+  
+}
